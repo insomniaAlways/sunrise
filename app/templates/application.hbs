@@ -1,5 +1,31 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="ui container">
+  <div class="ui segments box-shadow-none border-none margin-bottom-thirty">
+    <div class="ui segment border-none box-shadow-none padding-no-bottom">
+      <div class="ui grid margin-no padding-no">
+        <div class="one wide middle aligned column padding-no text-center">
+          <img src="/images/logo.png" style="height:60px; width: 60px">
+        </div>
+        <div class="seven wide middle aligned column padding-no-left padding-vs-top">
+          <h1>SUNRISE ACADAMY</h1>
+        </div>
+      </div>
+    </div>
+    <div class="ui segment border-none box-shadow-none padding-no-left padding-no-right">
+      {{nav-bar}}
+    </div>
+  </div>
+  <div class="ui segment margin-no padding-no border-none box-shadow-none">
+    <div class="ui grid margin-no padding-no">
+      <div class="three wide column">
+        {{about-column/about}}
+      </div>
+      <div class="nine wide column">
+        {{liquid-outlet}}
+      </div>
+      <div class="four wide column">
+        {{activity-column/column}}
+      </div>
+    </div>
+  </div>
 
-{{outlet}}
+</div>
