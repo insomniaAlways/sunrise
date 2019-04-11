@@ -10,7 +10,11 @@ Router.map(function() {
   this.route('home');
   this.route('about', function() {
     this.route('awards-affiliations');
-    this.route('principals-welcome');
+    this.route('from-principal');
+    this.route('mission-vision');
+  });
+  this.route('admission', function() {
+    this.route('details');
   });
 });
 
