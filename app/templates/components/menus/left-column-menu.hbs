@@ -1,0 +1,17 @@
+<div class="ui grid margin-no">
+  <div class="sixteen wide column padding-no-left padding-no-top">
+    <div class="ui segments border-none box-shadow-none">
+      <div class="ui inverted segment" style="background-color: #91060b">
+        {{menuFor}}
+      </div>
+      <div class="ui segment padding-no border-radius-none">
+        <div class="ui vertical fluid tabular menu text-size-small">
+          {{#each menuItems as |item|}}
+            {{scroll-to href=item.route label=item.name class="item"}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{yield}}
