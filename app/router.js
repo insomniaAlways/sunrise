@@ -16,6 +16,10 @@ Router.map(function() {
   this.route('admission', function() {
     this.route('details');
   });
+
+  this.route('campus-life', function() {
+    this.route('hostels');
+  });
 });
 
 export default Router;
