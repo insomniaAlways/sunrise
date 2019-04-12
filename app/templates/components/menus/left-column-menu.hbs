@@ -7,7 +7,11 @@
       <div class="ui segment padding-no border-radius-none">
         <div class="ui vertical fluid tabular menu text-size-small">
           {{#each menuItems as |item|}}
-            {{scroll-to href=item.route label=item.name class="item"}}
+          {{#if (eq selectedContent item.route)}}
+            {{scroll-to href=item.route label=item.name class="item active" afterScroll=(action 'setActive' item)}}
+          {{else}}
+            {{scroll-to href=item.route label=item.name class="item" afterScroll=(action 'setActive' item)}}
+          {{/if}}
           {{/each}}
         </div>
       </div>
