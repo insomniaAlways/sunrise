@@ -5,7 +5,7 @@
         {{menuFor}}
       </div>
       <div class="ui segment padding-no border-radius-none">
-        <div class="ui vertical fluid tabular menu text-size-small">
+        <div class="ui vertical fluid tabular menu text-size-small" style="border-bottom: 1px solid rgba(34, 36, 38, 0.15) !important;">
           {{#each menuItems as |item|}}
           {{#if (eq selectedContent item.route)}}
             {{scroll-to href=item.route label=item.name class="item active" afterScroll=(action 'setActive' item)}}
