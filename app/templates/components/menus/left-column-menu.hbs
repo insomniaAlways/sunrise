@@ -1,0 +1,21 @@
+<div class="ui grid margin-no">
+  <div class="sixteen wide column padding-no-left padding-no-top">
+    <div class="ui segments border-none box-shadow-none">
+      <div class="ui inverted segment" style="background-color: #91060b">
+        {{menuFor}}
+      </div>
+      <div class="ui segment padding-no border-radius-none">
+        <div class="ui vertical fluid tabular menu text-size-small" style="border-bottom: 1px solid rgba(34, 36, 38, 0.15) !important;">
+          {{#each menuItems as |item|}}
+          {{#if (eq selectedContent item.route)}}
+            {{scroll-to href=item.route label=item.name class="item active" afterScroll=(action 'setActive' item)}}
+          {{else}}
+            {{scroll-to href=item.route label=item.name class="item" afterScroll=(action 'setActive' item)}}
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{yield}}
