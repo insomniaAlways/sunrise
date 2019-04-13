@@ -20,6 +20,7 @@ Router.map(function() {
   this.route('campus-life', function() {
     this.route('hostels');
   });
+  this.route('fee-structure');
 });
 
 export default Router;
