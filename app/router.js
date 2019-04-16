@@ -20,6 +20,10 @@ Router.map(function() {
   this.route('campus-life', function() {
     this.route('hostels');
   });
+  this.route('events', function() {
+    this.route('edit');
+    this.route('create');
+  });
 });
 
 export default Router;
