@@ -1,0 +1,26 @@
+<div class="ui grid margin-no">
+  <div class="sixteen wide column padding-no-left padding-no-top">
+    <div class="ui segments border-none box-shadow-none">
+      <div class="ui inverted segment" style="background-color: #91060b">
+        About
+      </div>
+      <div class="ui segment padding-no border-radius-none">
+        <div class="ui vertical fluid tabular menu text-size-small">
+          {{#link-to 'about.index' class="item"}}
+            About Us
+          {{/link-to}}
+          {{#link-to 'about.from-principal' class="item"}}
+            From the Principal
+          {{/link-to}}
+          {{#link-to 'about.mission-vision' class="item"}}
+            Mission and Vision
+          {{/link-to}}
+          <a class="item">
+            Employment Oppurtunities
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{yield}}
