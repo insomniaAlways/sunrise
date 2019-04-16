@@ -4,13 +4,14 @@ import Ember from 'ember';
 export default Route.extend({
   setupController(controller) {
     controller.set('menuItems', Ember.A([
-        { route: '#documents', name: 'Documents' },
-        { route: '#timing', name: 'Session and School Timing' },
-        { route: '#passPercentage', name: 'Pass Percentage' },
-        { route: '#curricularActivities', name: 'Co Curricular Activities' },
-        { route: '#examinations', name: 'Tests and Examinations' },
-        { route: '#parentsTeacherMeet', name : 'Parents /Teacher Meet'},
-        { route: '#annualDay', name: 'Annual day'}
+        { route: '#documents', name: 'Documents', internalLinking: true},
+        { route: '#timing', name: 'Session and School Timing', internalLinking: true},
+        { route: '#passPercentage', name: 'Pass Percentage', internalLinking: true},
+        { route: '#curricularActivities', name: 'Co Curricular Activities', internalLinking: true},
+        { route: '#examinations', name: 'Tests and Examinations', internalLinking: true},
+        { route: '#parentsTeacherMeet', name : 'Parents /Teacher Meet', internalLinking: true},
+        { route: '#annualDay', name: 'Annual day', internalLinking: true},
+        { route: 'fee-structure', name: 'Fee Structure', internalLinking: false}
       ])
     )
   }

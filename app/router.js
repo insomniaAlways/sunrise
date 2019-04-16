@@ -20,6 +20,7 @@ Router.map(function() {
   this.route('campus-life', function() {
     this.route('hostels');
   });
+  this.route('fee-structure');
   this.route('events', function() {
     this.route('edit');
     this.route('create');
