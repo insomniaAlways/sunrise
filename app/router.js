@@ -21,6 +21,10 @@ Router.map(function() {
     this.route('hostels');
   });
   this.route('fee-structure');
+  this.route('events', function() {
+    this.route('edit');
+    this.route('create');
+  });
 });
 
 export default Router;
