@@ -1,0 +1,34 @@
+<form class="ui form">
+  <h4 class="ui dividing header">New Event</h4>
+  <div class="field">
+    <div class="two fields">
+      <div class="field">
+        <label>Name</label>
+        {{input value=name placeholder="Event Name"}}
+      </div>
+      <div class="field">
+        <label>Type</label>
+        {{input value=type placeholder="Event Type"}}
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>When</label>
+    <div class="fields">
+      <div class="twelve wide field">
+        {{ui-calendar
+          icon="calendar"
+          date=date
+          onChange=(action (mut date))
+          placeholder="Select Time"
+        }}
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Description</label>
+    {{textarea value=description rows="2"}}
+  </div>
+  <div class="ui button float-right" tabindex="0" {{action 'save' }}>Save</div>
+</form>
+{{yield}}
