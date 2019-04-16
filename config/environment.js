@@ -20,20 +20,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-    firebase: {
-      apiKey: "AIzaSyDvorlsVDvbKRQ1MyZT9vHKGj4bpC44WSQ",
-      authDomain: "school-24f26.firebaseapp.com",
-      databaseURL: "https://school-24f26.firebaseio.com",
-      projectId: "school-24f26",
-      storageBucket: "school-24f26.appspot.com",
-      messagingSenderId: "262602225697"
-    },
-    contentSecurityPolicy: {
-      'script-src': "'self' 'unsafe-eval' apis.google.com",
-      'frame-src': "'self' https://*.firebaseapp.com",
-      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
-    },
+    }
   };
 
   if (environment === 'development') {
