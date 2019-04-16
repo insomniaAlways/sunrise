@@ -1,30 +1,27 @@
-  <div class="ui secondary menu text-size-small" style="background-color: #91060b">
-      <div class="ui menu padding-no margin-no border-none" style="background-color:#91060b;">
-        <div class="ui simple dropdown item padding-no">
-          {{#link-to 'about.from-principal' class="item text-white"}}
-            About <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
-          {{/link-to}}
-          <div class="menu">
-            <div class="item">Principal's Welcome</div>
-            <div class="item">Mission and Vision</div>
-            <div class="item">Employment Oppurtunities</div>
-          </div>
-        </div>
+<div class="ui secondary menu text-size-small" style="background-color: #91060b">
+  <div class="ui menu padding-no margin-no border-none" style="background-color:transparent;">
+    <div class="ui simple dropdown item padding-no">
+      {{#link-to 'about' class="item text-white bg-transparent"}}
+        About <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
+      {{/link-to}}
+      <div class="menu">
+        <div class="item">Principal's Welcome</div>
+        <div class="item">Mission and Vision</div>
+        <div class="item">Employment Oppurtunities</div>
       </div>
-    <a class="item text-white">
-      Academics <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
-    </a>
-    {{#link-to 'admission.details' class="item text-white"}}
-      Admissions <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
-    {{/link-to}}
-    {{#link-to 'campus-life.hostels' class="item text-white"}}
-      Campus Life <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
-    {{/link-to}}
-    <a class="item text-white">
-      Event Calendar <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
-    </a>
-    <a class="item text-white">
-      News n Events <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
-    </a>
+    </div>
   </div>
+  {{#link-to 'admission.details' class="item text-white"}}
+    Admissions <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
+  {{/link-to}}
+  {{#link-to 'campus-life.hostels' class="item text-white"}}
+    Campus Life <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
+  {{/link-to}}
+  <a class="item text-white">
+    Event Calendar <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
+  </a>
+  <a class="item text-white">
+    News n Events <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
+  </a>
+</div>
 {{yield}}
