@@ -1,1 +1,23 @@
+<div class="ui grid margin-no">
+  <div class="two wide column padding-no text-center" style="max-width: 56px; min-width: 56px">
+    <div class="ui segments border-none box-shadow-none">
+      <div class="ui segment text-size-big padding-no-left padding-no-right padding-md-top padding-vs-bottom">
+        {{moment-format event.date "DD"}}
+      </div>
+      <div class="ui segment padding-vs border-none">
+        {{moment-format event.date "MMM"}}
+      </div>
+    </div>
+  </div>
+  <div class="twelve wide column padding-no">
+    <div class="ui segments border-none box-shadow-none">
+      <div class="ui segment text-size-large padding-no-left padding-no-right padding-md-top padding-vs-bottom">
+        {{event.name}}
+      </div>
+      <div class="ui segment padding-vs border-none">
+        {{event.description}}
+      </div>
+    </div>
+  </div>
+</div>
 {{yield}}

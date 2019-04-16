@@ -1,1 +1,8 @@
+{{#if events.isFulfilled}}
+  <div class="ui segments box-shadow-none border-none">
+    {{#each events as |event|}}
+      {{events/event-card event=event class="ui segment padding-vs"}}
+    {{/each}}
+  </div>
+{{/if}}
 {{yield}}
