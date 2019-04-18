@@ -2,7 +2,9 @@ import Component from '@ember/component';
 
 export default Component.extend({
   didInsertElement() {
-    this.send('setActive', this.get('menuItems.firstObject'))
+    if(this.get('menuFor') == 'Admissions') {
+      this.send('setActive', this.get('menuItems.firstObject'))
+    }
   },
 
   actions: {
