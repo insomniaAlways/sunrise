@@ -2,46 +2,46 @@
   <div class="ui menu padding-no margin-no border-none" style="background-color:transparent;">
     <div class="dropdown">
       {{#link-to 'about' class="item text-white bg-transparent"}}
-        About <i class="chevron down icon" class="text-size-ten margin-left-ten dropbtn"></i>
+        About {{!-- <i class="chevron down icon" class="text-size-ten margin-left-ten dropbtn"></i> --}}
       {{/link-to}}
-        <div class="dropdown-content">
-          {{#link-to "about.index"}}About Us{{/link-to}}
-          {{#link-to "about.from-principal"}}From the Principal{{/link-to}}
-          {{#link-to "about.mission-vision"}}Mission and Vision{{/link-to}}
-        </div>
+        {{!-- <div class="dropdown-content">
+          {{#link-to "about.index" class="text-size-small"}}About Us{{/link-to}}
+          {{#link-to "about.from-principal" class="text-size-small"}}From the Principal{{/link-to}}
+          {{#link-to "about.mission-vision" class="text-size-small"}}Mission and Vision{{/link-to}}
+        </div> --}}
     </div>
   </div>
   <div class="ui menu padding-no margin-no border-none" style="background-color:transparent;">
     <div class="dropdown">
       {{#link-to 'admission.details' class="item text-white"}}
-        Admissions <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
+        Admissions {{!-- <i class="chevron down icon" class="text-size-ten margin-left-ten"></i> --}}
       {{/link-to}}
-        <div class="dropdown-content">
+        {{!-- <div class="dropdown-content">
           {{#if isAdmissionRoute}}
-            <a href="#documents">Documents</a>
-            <a href="#timing">Session and School Timing</a>
-            <a href="#passPercentage">Pass Percentage</a>
-            <a href="#curricularActivities">Co Curricular Activities</a>
-            <a href="#examinations">Test and Examinations</a>
-            <a href="#parentsTeacherMeet">Parent Teachers Meet</a>
-            <a href="#annualDay">Annual Day</a>
-            {{#link-to 'fee-structure'}}Fee Structure{{/link-to}}
+            <a href="/admission/details#documents" class="text-size-small">Documents</a>
+            <a href="/admission/details#timing" class="text-size-small">Session and School Timing</a>
+            <a href="/admission/details#passPercentage" class="text-size-small">Pass Percentage</a>
+            <a href="/admission/details#curricularActivities" class="text-size-small">Co Curricular Activities</a>
+            <a href="/admission/details#examinations" class="text-size-small">Test and Examinations</a>
+            <a href="/admission/details#parentsTeacherMeet" class="text-size-small">Parent Teachers Meet</a>
+            <a href="/admission/details#annualDay" class="text-size-small">Annual Day</a>
+            {{#link-to 'fee-structure' class="text-size-small"}}Fee Structure{{/link-to}}
           {{else}}
-            {{#link-to "admission.details"}}Documents{{/link-to}}
-            {{#link-to "admission.details"}}Session and School Timing{{/link-to}}
-            {{#link-to "admission.details"}}Pass Percentage{{/link-to}}
-            {{#link-to 'admission.details'}}Co Curricular Activities{{/link-to}}
-            {{#link-to 'admission.details'}}Test and Examinations{{/link-to}}
-            {{#link-to 'admission.details'}}Parent Teachers Meet{{/link-to}}
-            {{#link-to 'admission.details'}}Annual Day{{/link-to}}
-            {{#link-to 'fee-structure'}}Fee Structure{{/link-to}}
+            {{!-- {{#link-to "admission.details" class="text-size-small"}}Documents{{/link-to}}
+            {{#link-to "admission.details" class="text-size-small"}}Session and School Timing{{/link-to}}
+            {{#link-to "admission.details" fragment="passPercentage" class="text-size-small"}}Pass Percentage{{/link-to}}
+            {{#link-to 'admission.details' class="text-size-small"}}Co Curricular Activities{{/link-to}}
+            {{#link-to 'admission.details' class="text-size-small"}}Test and Examinations{{/link-to}}
+            {{#link-to 'admission.details' class="text-size-small"}}Parent Teachers Meet{{/link-to}}
+            {{#link-to 'admission.details' class="text-size-small"}}Annual Day{{/link-to}}
+            {{#link-to 'fee-structure' class="text-size-small"}}Fee Structure{{/link-to}}
           {{/if}}
-        </div>
+        </div> --}}
     </div>
   </div>
   {{#link-to 'campus-life.hostels' class="item text-white"}}Campus Life{{/link-to}}
   {{#link-to 'events' class="item text-white"}}
-    News and Events <i class="chevron down icon" class="text-size-ten margin-left-ten"></i>
+    News and Events {{!-- <i class="chevron down icon" class="text-size-ten margin-left-ten"></i> --}}
   {{/link-to}}
 </div>
 {{yield}}
