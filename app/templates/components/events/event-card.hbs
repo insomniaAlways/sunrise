@@ -11,10 +11,10 @@
   </div>
   <div class="twelve wide left aligned column padding-no-top padding-no-bottom">
     <div class="ui segments border-none box-shadow-none">
-      <div class="ui segment text-size-large padding-no-left padding-no-right padding-md-top padding-vs-bottom">
+      <div class="ui segment text-size-large padding-no-left padding-no-right padding-md-top padding-vs-bottom {{if ellipsis "ellipsis"}}">
         {{event.name}}
       </div>
-      <div class="ui segment padding-vs border-none">
+      <div class="ui segment padding-vs border-none {{if ellipsis "ellipsis"}}">
         {{event.description}}
       </div>
     </div>

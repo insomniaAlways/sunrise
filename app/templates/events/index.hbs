@@ -1,6 +1,6 @@
 <div class="ui segments">
   {{#each model as |event|}}
-    {{events/event-card event=event class="ui segment"}}
+    {{events/event-card event=event class="ui segment" ellipsis=false}}
   {{/each}}
 </div>
 {{outlet}}

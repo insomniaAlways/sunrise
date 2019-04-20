@@ -1,7 +1,7 @@
 {{#if events.isFulfilled}}
   <div class="ui segments box-shadow-none border-none">
     {{#each events as |event|}}
-      {{events/event-card event=event class="ui segment padding-vs"}}
+      {{events/event-card event=event class="ui segment padding-vs" ellipsis=true}}
     {{/each}}
   </div>
 {{/if}}
