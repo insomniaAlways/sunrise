@@ -7,4 +7,9 @@ export default Component.extend({
   isAdmissionRoute: Ember.computed('router.currentRouteName', function() {
     return this.get('router.currentRouteName') == 'admission.details'
   }),
+  actions: {
+    toggleMenu() {
+      Ember.$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');
+    }
+  }
 });
