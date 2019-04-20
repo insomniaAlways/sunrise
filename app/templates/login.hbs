@@ -1,0 +1,46 @@
+<div class="ui three column centered column grid margin-no" style="height: calc(100vh - 200px)">
+  {{#if isLogin}}
+    <div class="middle aligned column">
+      <form class="ui form text-left">
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="Email Address">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Passowrd">
+        </div>
+        <div class="text-center field">
+          <button class="ui button" type="submit">Login</button>
+          <button class="ui button" type="submit" {{action 'changeView' 'isLogin'}}>Sign Up</button>
+        </div>
+      </form>
+    </div>
+  {{else}}
+    <div class="middle aligned column">
+      <form class="ui form text-left">
+        <div class="field">
+          <label>Username</label>
+          <input type="text" name="username" placeholder="Username">
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="Email Address">
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Passowrd">
+        </div>
+        <div class="field">
+          <label>Confirm Password</label>
+          <input type="password" name="cpassword" placeholder="Confirm Password">
+        </div>
+        <div class="text-center field">
+          <button class="ui button" type="submit">Create Account</button>
+          <button class="ui button" type="submit" {{action 'changeView' 'isLogin'}}>Login</button>
+        </div>
+      </form>
+    </div>
+  {{/if}}
+</div>
+{{outlet}}

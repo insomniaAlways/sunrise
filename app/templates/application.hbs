@@ -6,9 +6,11 @@
         <span class="text-size-large text-weight-bold" style="line-height: 3; margin-left: 10px">SUNRISE ACADEMY</span>
       {{/link-to}}
     </div>
-    <div class="ui segment border-none box-shadow-none padding-no">
-      {{nav-bar}}
-    </div>
+    {{#unless hideNavBar}}
+      <div class="ui segment border-none box-shadow-none padding-no">
+        {{nav-bar}}
+      </div>
+    {{/unless}}
   </div>
   <div class="ui segment margin-no padding-no border-none box-shadow-none">
     {{liquid-outlet}}

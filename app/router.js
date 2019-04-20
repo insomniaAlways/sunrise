@@ -25,6 +25,7 @@ Router.map(function() {
     this.route('edit');
     this.route('create');
   });
+  this.route('login');
 });
 
 export default Router;
