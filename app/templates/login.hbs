@@ -15,9 +15,6 @@
             {{#if isLoading }}<i class="spinner icon"></i>{{/if}}Login
           </div>
           <div class="ui button {{if isLoading 'disabled'}}" {{action 'changeView' 'isLogin'}}>Sign Up</div>
-          {{#if session.isAuthenticated}}
-            <div class="ui button" {{action 'invalidateSession'}}>Logout</div>
-          {{/if}}
         </div>
       {{else}}
         <div class="field">

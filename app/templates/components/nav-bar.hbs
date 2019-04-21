@@ -3,6 +3,11 @@
   {{#link-to 'admission.details' class="item text-white"}}Admissions{{/link-to}}
   {{#link-to 'campus-life.hostels' class="item text-white"}}Campus Life{{/link-to}}
   {{#link-to 'events' class="item text-white"}}News and Events{{/link-to}}
+  {{#if session.isAuthenticated}}
+    <div class="right item cursor-pointer" {{action 'invalidateSession'}}>Logout</div>
+  {{else}}
+    {{#link-to 'login' class="right item text-white"}}Login{{/link-to}}
+  {{/if}}
 </div>
 <div class="ui inverted menu text-size-small mobile-menu" style="background-color: #91060b">
   <div class="item pusher padding-vs-top padding-vs-bottom padding-sm-left">
@@ -13,6 +18,11 @@
     {{#link-to 'admission.details' class="item text-white"}}Admissions{{/link-to}}
     {{#link-to 'campus-life.hostels' class="item text-white"}}Campus Life{{/link-to}}
     {{#link-to 'events' class="item text-white"}}News and Events{{/link-to}}
+    {{#if session.isAuthenticated}}
+      <div class="item cursor-pointer" {{action 'invalidateSession'}}>Logout</div>
+    {{else}}
+      {{#link-to 'login' class="right item text-white"}}Login{{/link-to}}
+    {{/if}}
   </div>
 </div>
 {{yield}}

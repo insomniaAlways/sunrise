@@ -15,10 +15,6 @@ export default Route.extend({
     changeView(property) {
       this.controller.toggleProperty(property)
     },
-
-    invalidateSession() {
-      this.get('session').invalidate();
-    },
   
     createAccount() {
       let { newIdentification, newPassword, username, confirmPassword, role } = 
@@ -47,9 +43,10 @@ export default Route.extend({
       this.get('session').authenticate('authenticator:oauth2', identification, password)
       .then(() => {
         this.controller.set('isLoading', false)
-        // return this.get('router').replaceWith('home')
       })
-      .catch(error => console.log(error))
+      .catch((error) =>{
+        this.get('toast').error('Error', error)
+      })
     }
   }
 });
