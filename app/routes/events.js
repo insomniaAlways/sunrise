@@ -1,9 +1,11 @@
 import Route from '@ember/routing/route';
 import Ember from 'ember';
-import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
+import { inject as service } from '@ember/service';
 
-export default Route.extend(AuthenticatedRouteMixin, {
+export default Route.extend({
+  session: service(),
   setupController(controller) {
+    controller.set('session', this.get('session'))
     controller.set('menuItems', Ember.A([
         { route: 'events.index', name: 'All Events' },
         { route: 'events.create', name: 'Create New Event' },

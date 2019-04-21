@@ -11,7 +11,7 @@ export default Component.extend({
   }),
   actions: {
     invalidateSession() {
-      this.get('session').invalidate();
+      this.get('session').invalidate().then(() => window.location.replace('localhost:4200/home'));
     },
     toggleMenu() {
       Ember.$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');
