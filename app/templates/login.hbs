@@ -1,46 +1,60 @@
-<div class="ui three column centered column grid margin-no" style="height: calc(100vh - 200px)">
-  {{#if isLogin}}
-    <div class="middle aligned column">
-      <form class="ui form text-left">
+<div class="ui centered column grid margin-no" style="height: calc(100vh - 100px)">
+  <div class="column" style="max-width: 340px; margin-top: 50px">
+    <form class="ui form text-left">
+      {{#if isLogin}}
         <div class="field">
           <label>Email Address</label>
-          <input type="email" name="email" placeholder="Email Address">
+          {{input type="email" name="email" value=identification placeholder="Email Address"}}
         </div>
         <div class="field">
           <label>Password</label>
-          <input type="password" name="password" placeholder="Passowrd">
+          {{input type="password" name="password" value=password placeholder="Passowrd"}}
         </div>
         <div class="text-center field">
-          <button class="ui button" type="submit">Login</button>
-          <button class="ui button" type="submit" {{action 'changeView' 'isLogin'}}>Sign Up</button>
+          <div class="ui button {{if isLoading 'disabled'}}" {{action 'authenticate'}}>
+            {{#if isLoading }}<i class="spinner icon"></i>{{/if}}Login
+          </div>
+          <div class="ui button {{if isLoading 'disabled'}}" {{action 'changeView' 'isLogin'}}>Sign Up</div>
+          {{#if session.isAuthenticated}}
+            <div class="ui button" {{action 'invalidateSession'}}>Logout</div>
+          {{/if}}
         </div>
-      </form>
-    </div>
-  {{else}}
-    <div class="middle aligned column">
-      <form class="ui form text-left">
+      {{else}}
         <div class="field">
           <label>Username</label>
-          <input type="text" name="username" placeholder="Username">
+          {{input type="text" name="username" value=username placeholder="Username"}}
         </div>
         <div class="field">
           <label>Email Address</label>
-          <input type="email" name="email" placeholder="Email Address">
+          {{input type="email" name="email" value=newIdentification placeholder="Email Address"}}
         </div>
         <div class="field">
           <label>Password</label>
-          <input type="password" name="password" placeholder="Passowrd">
+          {{input type="password" name="password" value=newPassword placeholder="Passowrd"}}
         </div>
         <div class="field">
           <label>Confirm Password</label>
-          <input type="password" name="cpassword" placeholder="Confirm Password">
+          {{input type="password" name="cpassword" value=confirmPassword placeholder="Confirm Password"}}
+        </div>
+        <div class="field">
+          <label>Role</label>
+          {{#ui-dropdown class="selection" selected=role onChange=(action (mut role))}}
+            <div class="default text">Gender</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div data-value="admin" class="item">Admin</div>
+              <div data-value="manager" class="item">Manager</div>
+            </div>
+          {{/ui-dropdown}}
         </div>
         <div class="text-center field">
-          <button class="ui button" type="submit">Create Account</button>
-          <button class="ui button" type="submit" {{action 'changeView' 'isLogin'}}>Login</button>
+          <div class="ui button {{if isLoading 'disabled'}}" {{action 'createAccount'}}>
+            {{#if isLoading }}<i class="spinner icon"></i>{{/if}}Create Account
+          </div>
+          <div class="ui button" {{action 'changeView' 'isLogin'}}>Login</div>
         </div>
-      </form>
-    </div>
-  {{/if}}
+      {{/if}}
+    </form>
+  </div>
 </div>
 {{outlet}}

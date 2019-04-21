@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(environment) {
+  const authDomain = 'school-24f26.firebaseapp.com';
   let ENV = {
     modulePrefix: 'sunrise',
     environment,
@@ -23,11 +24,18 @@ module.exports = function(environment) {
     },
     firebase: {
       apiKey: "AIzaSyDvorlsVDvbKRQ1MyZT9vHKGj4bpC44WSQ",
-      authDomain: "school-24f26.firebaseapp.com",
+      authDomain: authDomain,
       databaseURL: "https://school-24f26.firebaseio.com",
       projectId: "school-24f26",
       storageBucket: "school-24f26.appspot.com",
       messagingSenderId: "262602225697"
+    },
+    'ember-simple-auth': {
+      baseURL: authDomain,
+      authorizer: 'authenticator:oauth2',
+      authenticationRoute: 'login',
+      routeIfAlreadyAuthenticated: 'home',
+      routeAfterAuthentication: 'home'
     },
     contentSecurityPolicy: {
       'script-src': "'self' 'unsafe-eval' apis.google.com",
