@@ -25,6 +25,9 @@ Router.map(function() {
     this.route('edit');
     this.route('create');
   });
+  this.route('contact');
+  this.route('gallery');
+  this.route('why-sunrise');
 });
 
 export default Router;
