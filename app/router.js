@@ -26,7 +26,7 @@ Router.map(function() {
     this.route('create');
   });
   this.route('contact');
-  this.route('gallery');
+  this.route('gallery', function() {});
   this.route('why-sunrise');
 });
 

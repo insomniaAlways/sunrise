@@ -1,1 +1,11 @@
-{{outlet}}
+<div class="ui stackable grid margin-no padding-no">
+  <div class="three wide column padding-no">
+    {{menus/left-column-menu menuItems=menuItems menuFor="Admissions"}}
+  </div>
+  <div class="nine wide column">
+    {{liquid-outlet}}
+  </div>
+  <div class="four wide column">
+    {{activity-column/column}}
+  </div>
+</div>
