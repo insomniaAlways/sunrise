@@ -1,11 +1,13 @@
 <div class="ui segment border-none box-shadow-none">
   <div class="ui three stackable cards">
-    <div class="card">
-      <div class="image">
-        <img src="https://semantic-ui.com/images/avatar/large/elliot.jpg">
+    {{#each model as |image|}}
+      <div class="card">
+        <div class="image">
+          <img src={{image.url}}>
+        </div>
       </div>
-    </div>
-    <div class="card">
+    {{/each}}
+    {{!-- <div class="card">
       <div class="image">
         <img src="https://semantic-ui.com/images/avatar/large/helen.jpg">
       </div>
@@ -29,7 +31,7 @@
       <div class="image">
         <img src="https://semantic-ui.com/images/avatar/large/steve.jpg">
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>
 <div class="ui segment">
