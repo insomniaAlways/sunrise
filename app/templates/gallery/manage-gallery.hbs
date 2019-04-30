@@ -10,7 +10,7 @@
   </div>
 </div>
 
-{{#modal-view openModal=openModal}}
-  <img src={{selectedImage.url}} style="width: 100%">
-{{/modal-view}}
+<div class="ui segment">
+  {{gallery/upload-image}}
+</div>
 {{outlet}}
