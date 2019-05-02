@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('awards-affiliations');
     this.route('from-principal');
     this.route('mission-vision');
+    this.route('rules-regulation');
   });
   this.route('admission', function() {
     this.route('details');
