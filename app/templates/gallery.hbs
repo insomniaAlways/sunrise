@@ -1,0 +1,13 @@
+<div class="ui stackable centered grid margin-no padding-no">
+  {{#if session.isAuthenticated}}
+    <div class="three wide column padding-no">
+      {{menus/left-column-menu menuItems=menuItems menuFor="Gallery"}}
+    </div>
+  {{/if}}
+  <div class="nine wide column">
+    {{liquid-outlet}}
+  </div>
+  <div class="four wide column">
+    {{activity-column/column}}
+  </div>
+</div>

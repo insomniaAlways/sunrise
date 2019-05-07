@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('awards-affiliations');
     this.route('from-principal');
     this.route('mission-vision');
+    this.route('rules-regulation');
   });
   this.route('admission', function() {
     this.route('details');
@@ -26,6 +27,11 @@ Router.map(function() {
     this.route('create');
   });
   this.route('login');
+  this.route('contact');
+  this.route('gallery', function() {
+    this.route('manage-gallery');
+  });
+  this.route('why-sunrise');
 });
 
 export default Router;

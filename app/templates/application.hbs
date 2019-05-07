@@ -1,10 +1,29 @@
 <div class="ui container">
   <div class="ui segments box-shadow-none border-none">
     <div class="ui segment border-none box-shadow-none padding-no-bottom margin-bottom-ten" style="height: 74px">
-      {{#link-to 'home'}}
+      {{#link-to 'home' class="mobile-menu"}}
         <img src="/images/logo.png" style="height:60px; width: 60px; float: left">
         <span class="text-size-large text-weight-bold" style="line-height: 3; margin-left: 10px">SUNRISE ACADEMY</span>
       {{/link-to}}
+
+      <div class="ui grid margin-no desktop-menu">
+        <div class="eight wide column padding-no-left padding-no-top">
+          {{#link-to 'home'}}
+            <img src="/images/logo.png" style="height:60px; width: 60px; float: left">
+            <span class="text-size-large text-weight-bold" style="line-height: 3; margin-left: 10px">SUNRISE ACADEMY</span>
+          {{/link-to}}
+        </div>
+        <div class="eight wide column padding-no-top padding-no-right">
+          <div class="ui right aligned grid margin-no">
+            <div class="right floated seven wide middle aligned column padding-no-right" style="max-width: 140px;">
+              <span><i class="phone volume icon"></i></span>7602180965 9002169915
+            </div>
+            <div class="four wide middle aligned column padding-no-left">
+              <span><i class="clock icon"></i></span> 8am - 6pm
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     {{#unless hideNavBar}}
       <div class="ui segment border-none box-shadow-none padding-no">
@@ -15,4 +34,17 @@
   <div class="ui segment margin-no padding-no border-none box-shadow-none">
     {{liquid-outlet}}
   </div>
+  {{#unless hideNavBar}}
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui centered grid margin-no">
+          <div class="row">
+            <div class="sixteen wide middle aligned column text-center">
+              Developed by <span class="text-blue text-weight-medium">Insomnia Always</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/unless}}
 </div>

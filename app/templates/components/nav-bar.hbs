@@ -3,6 +3,9 @@
   {{#link-to 'admission.details' class="item text-white"}}Admissions{{/link-to}}
   {{#link-to 'campus-life.hostels' class="item text-white"}}Campus Life{{/link-to}}
   {{#link-to 'events' class="item text-white"}}News and Events{{/link-to}}
+  {{#link-to 'contact' class="item text-white"}}Contacts{{/link-to}}
+  {{#link-to 'gallery' class="item text-white"}}Gallery{{/link-to}}
+  {{#link-to 'why-sunrise' class="item text-white"}}Why Sunrise Accademy{{/link-to}}
   {{#if session.isAuthenticated}}
     <div class="right item cursor-pointer" {{action 'invalidateSession'}}>Logout</div>
   {{else}}
@@ -18,6 +21,9 @@
     {{#link-to 'admission.details' class="item text-white"}}Admissions{{/link-to}}
     {{#link-to 'campus-life.hostels' class="item text-white"}}Campus Life{{/link-to}}
     {{#link-to 'events' class="item text-white"}}News and Events{{/link-to}}
+    {{#link-to 'contact' class="item text-white"}}Contacts{{/link-to}}
+    {{#link-to 'gallery' class="item text-white"}}Gallery{{/link-to}}
+    {{#link-to 'why-sunrise' class="item text-white"}}Why Sunrise Accademy{{/link-to}}
     {{#if session.isAuthenticated}}
       <div class="item cursor-pointer" {{action 'invalidateSession'}}>Logout</div>
     {{else}}

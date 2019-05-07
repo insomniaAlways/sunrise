@@ -1,17 +1,17 @@
 <div class="ui centered grid margin-no">
   <div class="two wide middle aligned column padding-no text-center" style="max-width: 56px; min-width: 56px;">
-    <div class="ui segments border-none box-shadow-none">
-      <div class="ui raised segment text-size-big padding-no-left padding-no-right padding-md-top padding-vs-bottom" style="background-image: linear-gradient(#91060b, white);">
+    <div class="ui segments">
+      <div class="ui segment text-size-fourteen padding-no text-white" style="background-color: #91060b">
+        {{moment-format event.date "MMM"}}
+      </div>
+      <div class="ui segemnt padding-sm" style="font-size: 25px">
         {{moment-format event.date "DD"}}
-        <div class="margin-top-ten text-size-fourteen">
-          {{moment-format event.date "MMM"}}
-        </div>
       </div>
     </div>
   </div>
   <div class="twelve wide left aligned column padding-no-top padding-no-bottom">
     <div class="ui segments border-none box-shadow-none">
-      <div class="ui segment text-size-large padding-no-left padding-no-right padding-md-top padding-vs-bottom {{if ellipsis "ellipsis"}}">
+      <div class="ui segment text-size-large padding-vs {{if ellipsis "ellipsis"}}">
         {{event.name}}
       </div>
       <div class="ui segment padding-vs border-none {{if ellipsis "ellipsis"}}">
