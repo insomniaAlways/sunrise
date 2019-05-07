@@ -1,0 +1,16 @@
+<div class="ui segment border-none box-shadow-none">
+  <div class="ui two stackable cards">
+    {{#each model as |image|}}
+      <div class="card">
+        <div class="image" style="/*height: 127px; width: 275px*/">
+          <img src={{image.url}} {{action 'toggleModal' 'openModal' image}}>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+{{#modal-view openModal=openModal}}
+  <img src={{selectedImage.url}} style="width: 100%">
+{{/modal-view}}
+{{outlet}}
