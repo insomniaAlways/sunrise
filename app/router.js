@@ -26,6 +26,7 @@ Router.map(function() {
     this.route('edit');
     this.route('create');
   });
+  this.route('login');
   this.route('contact');
   this.route('gallery', function() {
     this.route('manage-gallery');

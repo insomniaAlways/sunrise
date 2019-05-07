@@ -25,22 +25,26 @@
         </div>
       </div>
     </div>
-    <div class="ui segment border-none box-shadow-none padding-no">
-      {{nav-bar}}
-    </div>
+    {{#unless hideNavBar}}
+      <div class="ui segment border-none box-shadow-none padding-no">
+        {{nav-bar}}
+      </div>
+    {{/unless}}
   </div>
   <div class="ui segment margin-no padding-no border-none box-shadow-none">
     {{liquid-outlet}}
   </div>
-  <div class="ui inverted vertical footer segment">
-    <div class="ui container">
-      <div class="ui centered grid margin-no">
-        <div class="row">
-          <div class="sixteen wide middle aligned column text-center">
-            Developed by <span class="text-blue text-weight-medium">Insomnia Always</span>
+  {{#unless hideNavBar}}
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui centered grid margin-no">
+          <div class="row">
+            <div class="sixteen wide middle aligned column text-center">
+              Developed by <span class="text-blue text-weight-medium">Insomnia Always</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  {{/unless}}
 </div>

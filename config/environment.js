@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(environment) {
+  const authDomain = 'school-24f26.firebaseapp.com';
   let ENV = {
     modulePrefix: 'sunrise',
     environment,
@@ -23,16 +24,43 @@ module.exports = function(environment) {
     },
     firebase: {
       apiKey: "AIzaSyDvorlsVDvbKRQ1MyZT9vHKGj4bpC44WSQ",
-      authDomain: "school-24f26.firebaseapp.com",
+      authDomain: authDomain,
       databaseURL: "https://school-24f26.firebaseio.com",
       projectId: "school-24f26",
       storageBucket: "school-24f26.appspot.com",
       messagingSenderId: "262602225697"
     },
+    'ember-simple-auth': {
+      baseURL: authDomain,
+      authorizer: 'authenticator:oauth2',
+      authenticationRoute: 'login',
+      routeIfAlreadyAuthenticated: 'home',
+      routeAfterAuthentication: 'home'
+    },
     contentSecurityPolicy: {
       'script-src': "'self' 'unsafe-eval' apis.google.com",
       'frame-src': "'self' https://*.firebaseapp.com",
       'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+    'ember-toastr': {
+      injectAs: 'toast',
+      toastrOptions: {
+        closeButton: true,
+        debug: false,
+        newestOnTop: true,
+        progressBar: false,
+        positionClass: 'toast-bottom-right',
+        preventDuplicates: true,
+        onclick: null,
+        showDuration: '300',
+        hideDuration: '1000',
+        timeOut: '4000',
+        extendedTimeOut: '1000',
+        showEasing: 'swing',
+        hideEasing: 'linear',
+        showMethod: 'fadeIn',
+        hideMethod: 'fadeOut'
+      }
     },
   };
 

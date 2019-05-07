@@ -1,0 +1,57 @@
+<div class="ui centered column grid margin-no" style="height: calc(100vh - 100px)">
+  <div class="column" style="max-width: 340px; margin-top: 50px">
+    <form class="ui form text-left">
+      {{#if isLogin}}
+        <div class="field">
+          <label>Email Address</label>
+          {{input type="email" name="email" value=identification placeholder="Email Address"}}
+        </div>
+        <div class="field">
+          <label>Password</label>
+          {{input type="password" name="password" value=password placeholder="Passowrd"}}
+        </div>
+        <div class="text-center field">
+          <div class="ui button {{if isLoading 'disabled'}}" {{action 'authenticate'}}>
+            {{#if isLoading }}<i class="spinner icon"></i>{{/if}}Login
+          </div>
+          <div class="ui button {{if isLoading 'disabled'}}" {{action 'changeView' 'isLogin'}}>Sign Up</div>
+        </div>
+      {{else}}
+        <div class="field">
+          <label>Username</label>
+          {{input type="text" name="username" value=username placeholder="Username"}}
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          {{input type="email" name="email" value=newIdentification placeholder="Email Address"}}
+        </div>
+        <div class="field">
+          <label>Password</label>
+          {{input type="password" name="password" value=newPassword placeholder="Passowrd"}}
+        </div>
+        <div class="field">
+          <label>Confirm Password</label>
+          {{input type="password" name="cpassword" value=confirmPassword placeholder="Confirm Password"}}
+        </div>
+        <div class="field">
+          <label>Role</label>
+          {{#ui-dropdown class="selection" selected=role onChange=(action (mut role))}}
+            <div class="default text">Gender</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div data-value="admin" class="item">Admin</div>
+              <div data-value="manager" class="item">Manager</div>
+            </div>
+          {{/ui-dropdown}}
+        </div>
+        <div class="text-center field">
+          <div class="ui button {{if isLoading 'disabled'}}" {{action 'createAccount'}}>
+            {{#if isLoading }}<i class="spinner icon"></i>{{/if}}Create Account
+          </div>
+          <div class="ui button" {{action 'changeView' 'isLogin'}}>Login</div>
+        </div>
+      {{/if}}
+    </form>
+  </div>
+</div>
+{{outlet}}
