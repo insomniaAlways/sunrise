@@ -4,7 +4,8 @@ module.exports = function(environment) {
   const authDomain = 'school-24f26.firebaseapp.com';
   let ENV = {
     modulePrefix: 'sunrise',
-    environment,
+    environment: environment,
+    isDevelopment : environment !== "production",
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {

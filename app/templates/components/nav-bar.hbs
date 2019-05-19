@@ -6,10 +6,12 @@
   {{#link-to 'contact' class="item text-white"}}Contacts{{/link-to}}
   {{#link-to 'gallery' class="item text-white"}}Gallery{{/link-to}}
   {{#link-to 'why-sunrise' class="item text-white"}}Why Sunrise Accademy{{/link-to}}
-  {{#if session.isAuthenticated}}
-    <div class="right item cursor-pointer" {{action 'invalidateSession'}}>Logout</div>
-  {{else}}
-    {{#link-to 'login' class="right item text-white"}}Login{{/link-to}}
+  {{#if isDevelopment}}
+    {{#if session.isAuthenticated}}
+      <div class="right item cursor-pointer" {{action 'invalidateSession'}}>Logout</div>
+    {{else}}
+      {{#link-to 'login' class="right item text-white"}}Login{{/link-to}}
+    {{/if}}
   {{/if}}
 </div>
 <div class="ui inverted menu text-size-small mobile-menu" style="background-color: #91060b">
@@ -24,10 +26,12 @@
     {{#link-to 'contact' class="item text-white"}}Contacts{{/link-to}}
     {{#link-to 'gallery' class="item text-white"}}Gallery{{/link-to}}
     {{#link-to 'why-sunrise' class="item text-white"}}Why Sunrise Accademy{{/link-to}}
-    {{#if session.isAuthenticated}}
-      <div class="item cursor-pointer" {{action 'invalidateSession'}}>Logout</div>
-    {{else}}
-      {{#link-to 'login' class="right item text-white"}}Login{{/link-to}}
+    {{#if isDevelopment}}
+      {{#if session.isAuthenticated}}
+        <div class="item cursor-pointer" {{action 'invalidateSession'}}>Logout</div>
+      {{else}}
+        {{#link-to 'login' class="right item text-white"}}Login{{/link-to}}
+      {{/if}}
     {{/if}}
   </div>
 </div>

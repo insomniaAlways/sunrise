@@ -1,7 +1,9 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
+import ENV from "./../config/environment"
 
 export default Route.extend({
+  isDevelopment: ENV.isDevelopment,
   session: service(),
   firebaseApp: service(),
 
@@ -10,14 +12,15 @@ export default Route.extend({
     controller.set('isLogin', true)
     controller.set('session', this.get('session'))
     controller.set('isLoading', false)
+    controller.set('isDevelopment', this.get('isDevelopment'))
   },
   actions: {
     changeView(property) {
       this.controller.toggleProperty(property)
     },
-  
+
     createAccount() {
-      let { newIdentification, newPassword, username, confirmPassword, role } = 
+      let { newIdentification, newPassword, username, confirmPassword, role } =
       this.controller.getProperties('newIdentification', 'newPassword', 'username', 'confirmPassword', 'role')
       if(!newIdentification && !newPassword && !username && !confirmPassword) {
         return false
