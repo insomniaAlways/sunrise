@@ -1,3 +1,21 @@
-<div class="ui button" {{action 'uploadImage'}}>Upload Image</div>
+<div class="ui centered grid margin-no">
+  {{#if isUploading}}
+    <div class="ten wide column">
+      {{#ui-progress percent=progress class="tiny teal indicating"}}
+        <div class="bar"></div>
+        <div class="label">{{progress}}%</div>
+      {{/ui-progress}}
+    </div>
+  {{/if}}
+  <div class="ten wide column text-center">
+    <div class="ui button" {{action 'uploadImage'}}>Upload Image</div>
+  </div>
+</div>
 {{yield}}
-{{file-upload class="file-upload"}}
+{{file-upload
+  class="file-upload display-none"
+  progress=progress
+  isUploading=isUploading
+  toggleView=(action 'toggleView')
+  reset=(action 'reset')
+}}

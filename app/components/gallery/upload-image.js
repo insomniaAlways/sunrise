@@ -5,11 +5,27 @@ import Ember from 'ember';
 export default Component.extend({
   firebase: service(),
 
+  init() {
+    this._super(...arguments);
+    this.initProperty()
+  },
+
+  initProperty() {
+    this.setProperties({
+      'progress': 0,
+      'isUploading': false
+    })
+  },
+
   actions: {
     uploadImage() {
-      // var storage = this.get('firebase').storage();
-      // var storageRef = storage.ref();
       Ember.$('.file-upload').click()
+    },
+    toggleView(property) {
+      this.toggleProperty(property)
+    },
+    reset() {
+      this.initProperty()
     }
   }
 

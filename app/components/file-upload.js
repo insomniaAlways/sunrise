@@ -14,6 +14,7 @@ export default FileField.extend({
     let firebase = this.get('firebaseApp')
     var storage = firebase.storage();
     var storageRef = storage.ref();
+    this.sendAction('toggleView','isUploading')
 
     var metadata = {
       contentType: 'image/jpeg'
@@ -41,11 +42,12 @@ export default FileField.extend({
         return this.get('toast').error(error.code);
       }
     }
+    this.sendAction('reset')
   },
 
   progressStatus(snapshot) {
     let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    this.set('progress', progress)
+    this.set('progress', Math.round(progress))
     switch (snapshot.state) {
       case 'paused':
         return this.set('status', snapshot.state)
@@ -61,6 +63,14 @@ export default FileField.extend({
       name: data.name,
       url: url
     }).save()
+    .then(() => {
+      this.get('toast').success('Image uploaded successfully')
+      this.sendAction('reset')
+    })
+    .catch((e) => {
+      this.sendAction('reset')
+      this.get('toast').error('Something went wrong', e)
+    })
   },
 
   willDestroyElement() {
