@@ -2,7 +2,10 @@
   <div class="ui two stackable cards">
     {{#each model as |image|}}
       <div class="card">
-        <div class="image" style="/*height: 127px; width: 275px*/">
+        <div class="image desktop-menu" style="height: 127px; width: 275px">
+          <img src={{image.url}} {{action 'toggleModal' 'openModal' image}}>
+        </div>
+        <div class="image mobile-menu" style="height: 127px;">
           <img src={{image.url}} {{action 'toggleModal' 'openModal' image}}>
         </div>
       </div>

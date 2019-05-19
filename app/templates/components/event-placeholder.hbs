@@ -1,0 +1,23 @@
+{{#each columns as |column|}}
+  <div class="ui centered grid margin-no">
+    <div class="two wide middle aligned column padding-no text-center" style="max-width: 56px; min-width: 56px;">
+      <div class="ui segments">
+        <div class="ui placeholder" style="height: 60px">
+          <div class="image" style="height: inherit"></div>
+        </div>
+      </div>
+    </div>
+    <div class="twelve wide middle aligned column padding-no-top padding-no-bottom">
+      <div class="ui segments border-none box-shadow-none">
+        <div class="ui placeholder">
+          <div class="paragraph">
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+{{yield}}
+

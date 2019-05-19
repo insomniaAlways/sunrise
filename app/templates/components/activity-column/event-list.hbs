@@ -1,0 +1,39 @@
+<div class="ui segment padding-no border-none box-shadow-none">
+  <div style="overflow-x: auto;" class="bg-white">
+    {{#light-table table
+      height='700px'
+      width='100%'
+      tableClassNames='ui table margin-no border-radius-none border-none'
+      as |t|}}
+
+      {{t.head
+        fixed=true
+        classNames="display-none"
+      }}
+
+      {{#t.body
+        multiSelect=true
+        onScrolledToBottom=(action 'onScrolledToBottom')
+        as |body|
+      }}
+        {{#if isLoading}}
+          {{#each pageLoadRow as |index | }}
+            {{#body.loader}}
+              {{event-placeholder columns=columns}}
+            {{/body.loader}}
+          {{/each}}
+        {{/if}}
+        {{#if (and (not isLoading) table.isEmpty)}}
+          {{#body.no-data}}
+            <div class="ui middle aligned one column centered grid margin-no" style="min-height: calc(100vh - 302px);width: 100%;">
+              <div class="column">
+                <p class="margin-ten text-size-normal text-center">No event found</p>
+              </div>
+            </div>
+          {{/body.no-data}}
+        {{/if}}
+      {{/t.body}}
+    {{/light-table}}
+  </div>
+</div>
+{{yield}}

@@ -1,13 +1,10 @@
-{{#if events.isFulfilled}}
-  <div class="ui segments box-shadow-none border-none">
-    {{#each events as |event|}}
-      {{events/event-card event=event class="ui segment padding-vs-top padding-vs-left padding-vs-right padding-sm-bottom" ellipsis=true}}
-    {{/each}}
-    {{#if (gt events.length 11)}}
+<p class="text-center text-size-medium">Upcomming Events</p>
+<div class="ui segment box-shadow-none border-none padding-no">
+  {{activity-column/event-list ellipsis=true model=model}}
+  {{#if (gt model.length 8)}}
     <p class="text-right text-blue ">
       {{#link-to 'events.index'}}See more...{{/link-to}}
     </p>
-    {{/if}}
-  </div>
-{{/if}}
+  {{/if}}
+</div>
 {{yield}}
